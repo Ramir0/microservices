@@ -30,21 +30,21 @@ spring:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appdeposit
-                    uri: http://app-deposit:80
+                    uri: http://app-deposit:9003
                     predicates:
                     -   Path=/deposit/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appwithdrawal
-                    uri: http://app-withdrawal:80
+                    uri: http://app-withdrawal:9004
                     predicates:
                     -   Path=/withdrawal/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appmovements
-                    uri: http://app-movements:80
+                    uri: http://app-movements:9005
                     predicates:
                     -   Path=/movement/**
                     filters:
