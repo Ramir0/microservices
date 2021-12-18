@@ -4,7 +4,7 @@ spring:
     application:
         name: appgateway
     zipkin:
-        base-url: http://ec2-54-235-57-154.compute-1.amazonaws.com:9411
+        base-url: http://54.83.140.124:9411
     cloud:
         gateway:
             default-filters:
@@ -17,34 +17,34 @@ spring:
                         allowedHeaders: "*"
             routes:
                 -   id: appsecurity
-                    uri: http://ec2-54-235-57-154.compute-1.amazonaws.com:9001
+                    uri: http://54.83.140.124:9001
                     predicates:
                     -   Path=/security/**
                     filters:
                     -   StripPrefix=1
                 -   id: appaccount
-                    uri: http://ec2-54-235-57-154.compute-1.amazonaws.com:9002
+                    uri: http://54.83.140.124:9002
                     predicates:
                     -   Path=/account/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appdeposit
-                    uri: http://ec2-54-235-57-154.compute-1.amazonaws.com:9003
+                    uri: http://54.83.140.124:9003
                     predicates:
                     -   Path=/deposit/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appwithdrawal
-                    uri: http://ec2-54-235-57-154.compute-1.amazonaws.com:9004
+                    uri: http://54.83.140.124:9004
                     predicates:
                     -   Path=/withdrawal/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appmovements
-                    uri: http://ec2-54-235-57-154.compute-1.amazonaws.com:9005
+                    uri: http://54.83.140.124:9005
                     predicates:
                     -   Path=/movement/**
                     filters:
