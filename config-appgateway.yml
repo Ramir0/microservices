@@ -17,34 +17,34 @@ spring:
                         allowedHeaders: "*"
             routes:
                 -   id: appsecurity
-                    uri: http://54.83.140.124:9001
+                    uri: http://app-service-security:80
                     predicates:
                     -   Path=/security/**
                     filters:
                     -   StripPrefix=1
                 -   id: appaccount
-                    uri: http://54.83.140.124:9002
+                    uri: http://app-service-account:80
                     predicates:
                     -   Path=/account/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appdeposit
-                    uri: http://54.83.140.124:9003
+                    uri: http://app-service-deposit:80
                     predicates:
                     -   Path=/deposit/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appwithdrawal
-                    uri: http://54.83.140.124:9004
+                    uri: http://app-service-withdrawal:80
                     predicates:
                     -   Path=/withdrawal/**
                     filters:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appmovements
-                    uri: http://54.83.140.124:9005
+                    uri: http://app-service-movement:80
                     predicates:
                     -   Path=/movement/**
                     filters:
