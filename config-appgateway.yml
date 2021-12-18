@@ -4,7 +4,7 @@ spring:
     application:
         name: appgateway
     zipkin:
-        base-url: http://service-tracer:9411
+        base-url: http://ec2-54-235-57-154.compute-1.amazonaws.com:9411
     cloud:
         gateway:
             default-filters:
