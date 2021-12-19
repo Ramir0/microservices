@@ -44,7 +44,7 @@ spring:
                     -   StripPrefix=1
                     -   JwtAuthenticationFilter
                 -   id: appmovements
-                    uri: http://app-service-movement:80
+                    uri: http://app-service-movements:80
                     predicates:
                     -   Path=/movement/**
                     filters:
